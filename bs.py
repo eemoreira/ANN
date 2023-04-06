@@ -1,8 +1,8 @@
 import numpy as np
 import sys
-def f(x):
-    return np.log(x * x + 2) * np.exp(np.pi - x) - 3;
 
+def f(x):
+    return 2664644 - 1021673 * np.exp(x) - (np.exp(x) - 1) * 409818.0 / x
 
 a, b = map(float, input().split(" "))
 
@@ -20,8 +20,8 @@ def bs(l, r):
     mid = (l + r) / 2.0
     global cnt
     cnt += 1
-    print("%.15f" % mid, "%.15f" % f(mid), cnt);
-    if abs(f(mid)) < delta:
+    print("iter:", cnt, "%.15f" % mid, "%.15f" % f(mid))
+    if cnt == 20:
         return mid
     if f(mid) < 0:
         if w == 1:

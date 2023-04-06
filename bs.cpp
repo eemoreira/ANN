@@ -13,7 +13,7 @@ int main(){
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
   auto f = [&](long double x) {
-      return log(x * x + 2) * exp(acos(-1) - x) - 3;
+      return 2664644 - 1021673 * exp(x) - (exp(x) - 1) * 409818.0 / x;
   };
   long double a,b;
   cin >> a >> b;
