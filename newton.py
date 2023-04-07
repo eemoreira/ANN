@@ -1,9 +1,13 @@
 import numpy as np
 import sys
+
+a = 15.44
+b = 9.59
 def f(x):
-    return 2664644 - 1021673 * np.exp(x) - (np.exp(x) - 1) * 409818.0 / x
+    return 12 * x * x - x * (4 * b + 4 * a) + a * b;
+
 def df(x):
-    return 1021673 * np.exp(x) - (np.exp(x) / x**2) * (409818*x - 409818)
+    return 4 * (6 * x - b - a)
 
 ans = float(input())
 for i in range(20):

@@ -2,16 +2,22 @@ import numpy as np
 import sys
 
 def f(x):
-    return 2664644 - 1021673 * np.exp(x) - (np.exp(x) - 1) * 409818.0 / x
+    n = 130869380
+    t = n / 4
+    d = 1.41e-10
+    y = 1 + n * np.exp(-d * (n + 1) * x)
+    return t - (n + 1) / y
+
 
 a, b = map(float, input().split(" "))
 
 delta = 3.61034e-7
-w = 0
 
 if f(a) * f(b) >= 0:
     print("bosta")
     sys.exit(0)
+
+w = 0
 if f(a) > f(b):
     w = 1
 
