@@ -37,9 +37,15 @@ long double poly(long double t, vector<long double>&x, vector<long double>&coef)
 }
 
 int main(){
-    vector<long double> x = {0, 2, 4}, y = {2, 1, 2};
+    int n;
+    cin >> n;
+    vector<long double> x(n), y(n);
+    for (auto &u : x) cin >> u;
+    for (auto &u : y) cin >> u;
     vector<long double> coef = dif_div(x, y);
     cout << setprecision(15) << fixed;
+    for (auto u : coef) cout << u << ',';
+    cout << '\n';
     for (;;) {
         long double t;
         cin >> t;

@@ -27,29 +27,29 @@ int main(){
         return 0;
     }
     cout << setprecision(15) << fixed;
-    for (int i = 0; i < 20; i++) {
-        double c = b - f(b) * ((b - a) / (f(b) - f(a)));
-        if (f(c) * f(b) > 0) {
-            // if c and b have same sign
-            b = c;
+    const long double delta = 3.61034e-7;
+    int cnt = 0;
+    double ans = 0;
+    while (abs(f(ans)) >= delta) {
+        ans = b - f(b) * ((b - a) / (f(b) - f(a)));
+        if (f(ans) * f(b) > 0) {
+            b = ans;
         }
         else {
-            // if c and a have samen sign
-            a = c;
+            a = ans;
         }
-        cout << "iter: " << i+1 << ' ' << c << ' ' << f(c) << '\n';
+        cout << ++cnt << ' ' << ans << ' ' << f(ans) << '\n';
     }
-    /* const long double delta = 3.61034e-7; */
-    /* int cnt = 0; */
-    /* double ans = 0; */
-    /* while (abs(f(ans)) >= delta) { */
-    /*     ans = b - f(b) * ((b - a) / (f(b) - f(a))); */
-    /*     if (f(ans) * f(b) > 0) { */
-    /*         b = ans; */
+    /* for (int i = 0; i < 20; i++) { */
+    /*     double c = b - f(b) * ((b - a) / (f(b) - f(a))); */
+    /*     if (f(c) * f(b) > 0) { */
+    /*         // if c and b have same sign */
+    /*         b = c; */
     /*     } */
     /*     else { */
-    /*         a = ans; */
+    /*         // if c and a have same sign */
+    /*         a = c; */
     /*     } */
-    /*     cout << ++cnt << ' ' << ans << ' ' << f(ans) << '\n'; */
+    /*     cout << "iter: " << i+1 << ' ' << c << ' ' << f(c) << '\n'; */
     /* } */
 }
